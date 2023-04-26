@@ -8,6 +8,8 @@ spec:
   interval: 30m
   ref:
     branch: main
+  secretRef:
+    name: "${GITHUB_DEPLOY_KEY}"
   url: "${BOOTSTRAP_GIT_REPOSITORY}"
   ignore: |
     # exclude all
