@@ -6,11 +6,11 @@ metadata:
   namespace: flux-system
 spec:
   interval: 30m
+  url: "ssh://git@github.com/Cyberius9/Gitops"
   ref:
     branch: main
   secretRef:
     name: github-deploy-key
-  url: "ssh://git@github.com/Cyberius9/Gitops"
   ignore: |
     # exclude all
     /*
