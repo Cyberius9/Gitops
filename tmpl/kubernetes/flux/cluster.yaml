@@ -6,11 +6,11 @@ metadata:
   namespace: flux-system
 spec:
   interval: 30m
+  url: "${BOOTSTRAP_GIT_REPOSITORY}"
   ref:
     branch: main
   secretRef:
     name: github-deploy-key
-  url: "${BOOTSTRAP_GIT_REPOSITORY}"
   ignore: |
     # exclude all
     /*
