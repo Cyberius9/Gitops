@@ -9,8 +9,6 @@ spec:
   url: "${BOOTSTRAP_GIT_REPOSITORY}"
   ref:
     branch: main
-  secretRef:
-    name: github-deploy-key
   ignore: |
     # exclude all
     /*
