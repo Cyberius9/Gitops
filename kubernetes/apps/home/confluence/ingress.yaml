@@ -1,5 +1,5 @@
 ---
-apiVersion: extensions/v1beta1
+apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: confluence
@@ -16,3 +16,7 @@ spec:
             backend:
               serviceName: confluence
               servicePort: 80
+  tls:
+    - hosts:
+        - "confluence.${SECRET_DOMAIN}"
+      secretName: letsencrypt-production
