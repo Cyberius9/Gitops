@@ -12,6 +12,7 @@ spec:
   tls:
     - hosts:
         - "confluence.${SECRET_DOMAIN}"
+      secretName: confluence-tls
   rules:
     - host: "confluence.${SECRET_DOMAIN}"
       http:
