@@ -6,18 +6,22 @@ metadata:
   namespace: home
   annotations:
     external-dns.alpha.kubernetes.io/target: "ipv4.${SECRET_DOMAIN}"
+    nginx.ingress.kubernetes.io/backend-protocol: "HTTP"
 spec:
+  className: nginx
   rules:
     - host: "confluence.${SECRET_DOMAIN}"
       http:
         paths:
-          - path: /
+          - backend:
+              service:
+                name: confluence
+                port:
+                  number: 80
+            path: /
             pathType: Prefix
-            backend:
-              serviceName: confluence
-              servicePort: 80
   tls:
     - hosts:
         - "confluence.${SECRET_DOMAIN}"
-      secretName: letsencrypt-production
-      namespace: cert-manager
+      secretName: ${SECRET_DOMAIN}-tls
+      namespace: networking
