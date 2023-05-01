@@ -8,4 +8,6 @@ resources:
   - ./ingress-nginx/ks.yaml
   - ./k8s-gateway/ks.yaml
   - ./metallb/ks.yaml
-  - ./confluence/kustomization.yaml
+  - ./confluence/service.yaml
+  - ./confluence/endpoint.yaml
+  - ./confluence/ingress.yaml
