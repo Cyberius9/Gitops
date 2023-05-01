@@ -8,6 +8,7 @@ metadata:
     external-dns.alpha.kubernetes.io/target: "ipv4.${SECRET_DOMAIN}"
 spec:
   ingressClassName: nginx
+  namespace: networking
   rules:
     - host: "confluence.${SECRET_DOMAIN}"
       http:
