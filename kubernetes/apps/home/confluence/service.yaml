@@ -6,9 +6,6 @@ metadata:
   namespace: home
 spec:
   ports:
-    - name: confluence-app
-      port: 80
+    - port: 8090
       protocol: TCP
-      targetPort: 8090
-  clusterIP: None
   type: ClusterIP
