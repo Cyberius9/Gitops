@@ -10,12 +10,13 @@ metadata:
     nginx.ingress.kubernetes.io/ssl-redirect: "true"
     nginx.ingress.kubernetes.io/ssl-certificate: "${SECRET_DOMAIN/./-}-production-tls"
     nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
+    nginx.ingress.kubernetes.io/ssl-passthrough: "true"
     external-dns.alpha.kubernetes.io/target: "ipv4.${SECRET_DOMAIN}"
 spec:
   tls:
     - hosts:
         - "confluence.${SECRET_DOMAIN}"
-      # secretName: "${SECRET_DOMAIN/./-}-production-tls"
+      secretName: "${SECRET_DOMAIN/./-}-production-tls"
   rules:
     - host: "confluence.${SECRET_DOMAIN}"
       http:
