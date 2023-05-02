@@ -16,6 +16,7 @@ spec:
     - hosts:
         - "confluence.${SECRET_DOMAIN}"
       secretName: letsencrypt-production
+      namespace: cert-manager
   rules:
     - host: "confluence.${SECRET_DOMAIN}"
       http:
