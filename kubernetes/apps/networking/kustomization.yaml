@@ -11,6 +11,3 @@ resources:
   - ./confluence/service.yaml
   - ./confluence/endpoint.yaml
   - ./confluence/ingress.yaml
-  - ./serviceaccount-homelab/serviceaccount.yaml
-  - ./serviceaccount-homelab/role.yaml
-  - ./serviceaccount-homelab/rolebinding.yaml
