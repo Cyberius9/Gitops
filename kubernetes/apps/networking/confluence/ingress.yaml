@@ -15,10 +15,7 @@ spec:
   tls:
     - hosts:
         - "confluence.${SECRET_DOMAIN}"
-      secretName: "${SECRET_DOMAIN/./-}-production-tls"
-      issuerRef:
-        name: letsencrypt-production
-        kind: ClusterIssuer
+      secretName: letsencrypt-production
   rules:
     - host: "confluence.${SECRET_DOMAIN}"
       http:
@@ -30,3 +27,4 @@ spec:
                 name: confluence
                 port:
                   name: confluence-app
+  serviceAccountName: homelab-serviceaccount
