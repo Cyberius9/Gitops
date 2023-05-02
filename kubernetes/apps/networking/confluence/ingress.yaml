@@ -6,21 +6,17 @@ metadata:
   namespace: networking
   annotations:
     external-dns.alpha.kubernetes.io/target: "ipv4.${SECRET_DOMAIN}"
+    nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   ingressClassName: nginx
   rules:
     - host: "confluence.${SECRET_DOMAIN}"
       http:
         paths:
-          - backend:
+          - path: /
+            pathType: Prefix
+            backend:
               service:
                 name: confluence
                 port:
-                  number: 8090
-            path: /
-            pathType: Prefix
-  tls:
-    - hosts:
-        - "confluence.${SECRET_DOMAIN}"
-      secretName: "${SECRET_DOMAIN/./-}-production-tls"
-      namespace: networking
+                  name: confluence-app
