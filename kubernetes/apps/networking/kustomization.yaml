@@ -14,3 +14,4 @@ resources:
   - ./homelab/loxone
   - ./homelab/nextcloud
   - ./homelab/plex
+  - ./homelab/unifi
