@@ -10,6 +10,7 @@ resources:
   - ./metallb/ks.yaml
   - ./homelab/bitwarden
   - ./homelab/confluence
+  - ./homelab/getferdi
   - ./homelab/loxone
   - ./homelab/nextcloud
   - ./homelab/plex
