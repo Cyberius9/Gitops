@@ -1,0 +1,13 @@
+---
+apiVersion: v1
+kind: Endpoints
+metadata:
+  name: nextcloud
+  namespace: networking
+subsets:
+  - addresses:
+      - ip: 192.168.1.164
+    ports:
+      - name: nextcloud-app
+        port: 80
+        protocol: TCP

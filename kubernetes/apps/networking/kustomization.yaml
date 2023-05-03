@@ -11,4 +11,5 @@ resources:
   - ./homelab/bitwarden
   - ./homelab/confluence
   - ./homelab/loxone
+  - ./homelab/nextcloud
   - ./homelab/plex

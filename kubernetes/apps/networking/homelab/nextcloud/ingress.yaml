@@ -1,0 +1,29 @@
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: nextcloud
+  namespace: networking
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    nginx.ingress.kubernetes.io/rewrite-target: /
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
+    nginx.ingress.kubernetes.io/ssl-certificate: "${SECRET_DOMAIN/./-}-production-tls"
+    nginx.ingress.kubernetes.io/ssl-passthrough: "true"
+    external-dns.alpha.kubernetes.io/target: "ipv4.${SECRET_DOMAIN}"
+spec:
+  tls:
+    - hosts:
+        - "nextcloud.${SECRET_DOMAIN}"
+      secretName: "${SECRET_DOMAIN/./-}-production-tls"
+  rules:
+    - host: "nextcloud.${SECRET_DOMAIN}"
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: nextcloud
+                port:
+                  name: nextcloud-app
