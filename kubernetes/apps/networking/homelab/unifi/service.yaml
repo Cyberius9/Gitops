@@ -7,7 +7,7 @@ metadata:
 spec:
   ports:
     - name: unifi-app
-      port: 443
+      port: 80
       protocol: TCP
       targetPort: 8443
   type: ClusterIP
