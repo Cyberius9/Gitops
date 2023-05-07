@@ -51,14 +51,17 @@ spec:
           bookmarks:
             - name: Cloudflare
               url: "https://dash.cloudflare.com"
+              icon: cloud
         - group: Entwicklung
           bookmarks:
             - name: Github
               url: "https://github.com/Cyberius9/Gitops"
+              icon: github
         - group: Unterhaltung
           bookmarks:
             - name: YouTube
               url: "https://youtube.com/feed/subscriptions"
+              icon: youtube
         - group: Lesen & News
           bookmarks:
             - name: Reddit
