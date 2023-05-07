@@ -4,6 +4,6 @@ kind: Kustomization
 resources:
   - ./cloudflare.yaml
   - ./rfc1918.yaml
-  - ./redirect.yaml
+  - ./redirect-path.yaml
   - ./internal-auth.yaml
   - ./external-auth.yaml
