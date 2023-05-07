@@ -8,6 +8,7 @@ resources:
   - ./ingress-nginx/ks.yaml
   - ./k8s-gateway/ks.yaml
   - ./metallb/ks.yaml
+  - ./traefik/ks.yaml
   - ./homelab/bitwarden
   - ./homelab/confluence
   - ./homelab/getferdi
