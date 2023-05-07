@@ -27,19 +27,41 @@ spec:
     keepHistory: false
   values:
     hajimari:
-      title: Apps
+      title: Apps & Lesezeichen
       darkTheme: espresso
       alwaysTargetBlank: true
       showGreeting: false
-      showAppGroups: false
+      showAppGroups: "true"
       showAppStatus: false
-      showBookmarkGroups: false
-      showGlobalBookmarks: false
+      showBookmarkGroups: true
+      showGlobalBookmarks: true
       showAppUrls: false
-      defaultEnable: true
+      defaultEnable: false
       namespaceSelector:
         matchNames:
           - default
+      globalBookmarks:
+        - group: Kommunikation
+          bookmarks:
+            - name: Discord
+              url: "https://discord.com"
+              info: "Kanal: Kubernetes @Home"
+        - group: Webhoster
+          bookmarks:
+            - name: Cloudflare
+              url: "https://dash.cloudflare.com"
+        - group: Entwicklung
+          bookmarks:
+            - name: Github
+              url: "https://github.com/Cyberius9/Gitops"
+        - group: Unterhaltung
+          bookmarks:
+            - name: YouTube
+              url: "https://youtube.com/feed/subscriptions"
+        - group: Lesen & News
+          bookmarks:
+            - name: Reddit
+              url: "http://reddit.com"
     ingress:
       main:
         enabled: true
