@@ -9,16 +9,16 @@ metadata:
     external-dns.alpha.kubernetes.io/target: "ipv4.${SECRET_DOMAIN}"
     hajimari.io/enable: "true"
     hajimari.io/icon: plex
-    kubernetes.io/ingress.class: nginx
-    nginx.ingress.kubernetes.io/rewrite-target: /
-    nginx.ingress.kubernetes.io/ssl-redirect: "true"
-    nginx.ingress.kubernetes.io/ssl-certificate: "${SECRET_DOMAIN/./-}-production-tls"
-    nginx.ingress.kubernetes.io/ssl-passthrough: "true"
+    kubernetes.io/ingress.class: traefik
+    kubernetes.io/tls-acme: "true"
+    cert-manager.io/cluster-issuer: letsencrypt-production
+    traefik.ingress.kubernetes.io/router.entrypoints: "websecure"
+    traefik.ingress.kubernetes.io/router.middlewares: "networking-external-auth@kubernetescrd"
 spec:
   tls:
     - hosts:
         - "plex.${SECRET_DOMAIN}"
-      secretName: "${SECRET_DOMAIN/./-}-production-tls"
+      secretName: "plex.${SECRET_DOMAIN}-tls"
   rules:
     - host: "plex.${SECRET_DOMAIN}"
       http:
