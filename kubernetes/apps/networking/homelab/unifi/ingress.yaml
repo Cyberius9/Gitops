@@ -14,6 +14,8 @@ metadata:
     cert-manager.io/cluster-issuer: letsencrypt-production
     traefik.ingress.kubernetes.io/router.entrypoints: "websecure"
     traefik.ingress.kubernetes.io/router.middlewares: "network-external-auth@kubernetescrd"
+    traefik.ingress.kubernetes.io/service.serversscheme: "https"
+    traefik.ingress.kubernetes.io/service.serverstransport: "unifi"
 spec:
   tls:
     - hosts:
@@ -30,4 +32,3 @@ spec:
                 name: unifi
                 port:
                   name: unifi-app
-                serversTransport: unifi
