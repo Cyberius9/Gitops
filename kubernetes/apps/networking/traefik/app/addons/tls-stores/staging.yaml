@@ -1,0 +1,9 @@
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: TLSStore
+metadata:
+  name: staging
+  namespace: networking
+spec:
+  defaultCertificate:
+    secretName: "${SECRET_DOMAIN/./-}-staging-tls"

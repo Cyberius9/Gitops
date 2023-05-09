@@ -22,12 +22,12 @@ spec:
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata:
-  name: cluster-apps-traefik-tls-store
+  name: cluster-apps-traefik-tls-stores
   namespace: flux-system
 spec:
   dependsOn:
     - name: cluster-apps-traefik
-  path: ./kubernetes/apps/networking/traefik/app/addons/tls-store
+  path: ./kubernetes/apps/networking/traefik/app/addons/tls-stores
   prune: true
   sourceRef:
     kind: GitRepository
@@ -40,13 +40,12 @@ spec:
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata:
-  name: cluster-apps-traefik-dashboard
+  name: cluster-apps-traefik-tls-options
   namespace: flux-system
 spec:
   dependsOn:
-    - name: cluster-apps-traefik
-    - name: cluster-apps-traefik-tls-store
-  path: ./kubernetes/apps/networking/traefik/app/addons/dashboard
+    - name: cluster-apps-traefik-tls-stores
+  path: ./kubernetes/apps/networking/traefik/app/addons/tls-options
   prune: true
   sourceRef:
     kind: GitRepository
@@ -63,10 +62,26 @@ metadata:
   namespace: flux-system
 spec:
   dependsOn:
-    - name: cluster-apps-traefik
-    - name: cluster-apps-traefik-tls-store
-    - name: cluster-apps-traefik-dashboard
+    - name: cluster-apps-traefik-tls-options
   path: ./kubernetes/apps/networking/traefik/app/addons/middlewares
+  prune: true
+  sourceRef:
+    kind: GitRepository
+    name: home-kubernetes
+  wait: true
+  interval: 30m
+  retryInterval: 1m
+  timeout: 3m
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: cluster-apps-traefik-dashboard
+  namespace: flux-system
+spec:
+  dependsOn:
+    - name: cluster-apps-traefik-middlewares
+  path: ./kubernetes/apps/networking/traefik/app/addons/dashboard
   prune: true
   sourceRef:
     kind: GitRepository
