@@ -9,17 +9,16 @@ metadata:
     external-dns.alpha.kubernetes.io/target: "ipv4.${SECRET_DOMAIN}"
     hajimari.io/enable: "true"
     hajimari.io/icon: access-point
-    kubernetes.io/ingress.class: nginx
-    nginx.ingress.kubernetes.io/rewrite-target: /
-    nginx.ingress.kubernetes.io/ssl-redirect: "true"
-    nginx.ingress.kubernetes.io/ssl-certificate: "${SECRET_DOMAIN/./-}-production-tls"
-    nginx.ingress.kubernetes.io/ssl-passthrough: "true"
-    nginx.ingress.kubernetes.io/ssl-verify: "false"
+    kubernetes.io/ingress.class: traefik
+    kubernetes.io/tls-acme: "true"
+    cert-manager.io/cluster-issuer: letsencrypt-production
+    traefik.ingress.kubernetes.io/router.entrypoints: "websecure"
+    traefik.ingress.kubernetes.io/router.middlewares: "network-external-auth@kubernetescrd"
 spec:
   tls:
     - hosts:
         - "unifi.${SECRET_DOMAIN}"
-      secretName: "${SECRET_DOMAIN/./-}-production-tls"
+      secretName: "unifi.${SECRET_DOMAIN}-tls"
   rules:
     - host: "unifi.${SECRET_DOMAIN}"
       http:
@@ -31,3 +30,5 @@ spec:
                 name: unifi
                 port:
                   name: unifi-app
+                scheme: https
+                serversTransport: unifi
