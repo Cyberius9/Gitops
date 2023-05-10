@@ -1,0 +1,26 @@
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: Middleware
+metadata:
+  name: nextcloud-headers
+  namespace: networking
+spec:
+  headers:
+    contentSecurityPolicy: "upgrade-insecure-requests"
+    customResponseHeaders:
+      X-Robots-Tag: "none"
+    hostsProxyHeaders:
+      - X-Forwarded-Host
+    frameDeny: true
+    sslRedirect: true
+    stsSeconds: 120
+    stsIncludeSubdomains: true
+    stsPreload: true
+    forceSTSHeader: true
+    customFrameOptionsValue: "SAMEORIGIN"
+    contentTypeNosniff: true
+    browserXssFilter: true
+    referrerPolicy: strict-origin-when-cross-origin
+    featurePolicy: >-
+      camera 'none'; geolocation 'none'; microphone 'none'; payment 'none';
+      usb 'none'; vr 'none';

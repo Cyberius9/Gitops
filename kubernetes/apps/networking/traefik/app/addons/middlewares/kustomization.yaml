@@ -7,3 +7,12 @@ resources:
   - ./redirect-path.yaml
   - ./internal-auth.yaml
   - ./external-auth.yaml
+  - ./addprefix-admin.yaml
+  - ./authelia.yaml
+  - ./secret-basic-auth.sops.yaml
+  - ./basic-auth.yaml
+  - ./compress.yaml
+  - ./ratelimit.yaml
+  - ./nextcloud-headers.yaml
+  - ./nextcloud-dav-redirect.yaml
+  - ./secure-headers.yaml

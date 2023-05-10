@@ -8,3 +8,51 @@ spec:
   chain:
     middlewares:
       - name: cloudflare-ips
+      - name: secure-headers
+      - name: compress-all
+      - name: ratelimit
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: Middleware
+metadata:
+  name: external-basic-auth
+  namespace: networking
+spec:
+  chain:
+    middlewares:
+      - name: external-auth
+      - name: basic-auth
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: Middleware
+metadata:
+  name: external-authelia-auth
+  namespace: networking
+spec:
+  chain:
+    middlewares:
+      - name: external-auth
+      - name: authelia
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: Middleware
+metadata:
+  name: external-authelia-auth-add-admin
+  namespace: networking
+spec:
+  chain:
+    middlewares:
+      - name: external-authelia-auth
+      - name: add-admin
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: Middleware
+metadata:
+  name: external-auth-nextcloud-headers
+  namespace: networking
+spec:
+  chain:
+    middlewares:
+      - name: cloudflare-ips
+      - name: nextcloud-headers
+      - name: nextcloud-dav-redirect
