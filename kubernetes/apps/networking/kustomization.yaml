@@ -15,6 +15,7 @@ resources:
   - ./homelab/confluence
   - ./homelab/duplicati
   - ./homelab/getferdi
+  - ./homelab/grafana
   - ./homelab/loxone
   - ./homelab/nextcloud
   - ./homelab/plex
