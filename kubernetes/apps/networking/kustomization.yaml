@@ -13,6 +13,7 @@ resources:
   - ./homelab/bitbucket
   - ./homelab/bitwarden
   - ./homelab/confluence
+  - ./homelab/duplicati
   - ./homelab/getferdi
   - ./homelab/loxone
   - ./homelab/nextcloud
