@@ -8,6 +8,6 @@ subsets:
   - addresses:
       - ip: 192.168.1.70
     ports:
-      - name: authelia-unraid-app
+      - name: authelia-app
         port: 9091
         protocol: TCP
