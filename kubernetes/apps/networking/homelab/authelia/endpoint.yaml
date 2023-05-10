@@ -1,0 +1,13 @@
+---
+apiVersion: v1
+kind: Endpoints
+metadata:
+  name: authelia-unraid
+  namespace: networking
+subsets:
+  - addresses:
+      - ip: 192.168.1.70
+    ports:
+      - name: authelia-unraid-app
+        port: 9091
+        protocol: TCP

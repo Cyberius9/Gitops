@@ -1,0 +1,13 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: authelia-unraid
+  namespace: networking
+spec:
+  ports:
+    - name: authelia-unraid-app
+      port: 9091
+      protocol: TCP
+      targetPort: 9091
+  type: ClusterIP
