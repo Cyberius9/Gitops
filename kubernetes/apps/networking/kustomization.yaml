@@ -10,6 +10,7 @@ resources:
   - ./metallb/ks.yaml
   - ./traefik/ks.yaml
   - ./homelab/authelia
+  - ./homelab/bitbucket
   - ./homelab/bitwarden
   - ./homelab/confluence
   - ./homelab/getferdi
