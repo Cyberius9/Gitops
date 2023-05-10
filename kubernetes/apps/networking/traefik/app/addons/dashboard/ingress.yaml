@@ -5,10 +5,13 @@ metadata:
   name: traefik-dashboard
   namespace: networking
   annotations:
+    external-dns/is-public: "true"
+    external-dns.alpha.kubernetes.io/target: "ipv4.${SECRET_DOMAIN}"
     hajimari.io/enable: "true"
     hajimari.io/icon: "web"
     hajimari.io/appName: "traefik"
     traefik.ingress.kubernetes.io/router.entrypoints: "websecure"
+    traefik.ingress.kubernetes.io/router.middlewares: "networking-external-authelia-auth@kubernetescrd"
 spec:
   ingressClassName: traefik
   tls:
