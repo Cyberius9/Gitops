@@ -82,7 +82,8 @@ spec:
               #- name: /dev/disk/by-id/nvme-CT1000P1SSD8_202528BE3D9D
           - name: node2-2
             devices:
-              - name: /dev/disk/by-id/nvme-CT1000P5SSD8_21082D4A501F
+              #- name: /dev/disk/by-id/nvme-CT1000P5SSD8_21082D4A501F
+              - name: /dev/disk/by-id/scsi-0QEMU_QEMU_HARDDISK_drive-scsi2
           #- name: node3-3
             #devices:
               #- name: /dev/disk/by-id/nvme-CT1000P2SSD8_2115E596B266
