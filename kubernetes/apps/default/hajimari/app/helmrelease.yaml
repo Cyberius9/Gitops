@@ -41,6 +41,8 @@ spec:
         matchNames:
           - default
           - networking
+          - flux-system
+          - monitoring
           - rook-ceph
       globalBookmarks:
         - group: Kommunikation
