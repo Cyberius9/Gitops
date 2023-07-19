@@ -41,6 +41,7 @@ spec:
         matchNames:
           - default
           - networking
+          - rook-ceph
       globalBookmarks:
         - group: Kommunikation
           bookmarks:
