@@ -33,7 +33,7 @@ spec:
     keepHistory: false
   values:
     image:
-      repository: ghcr.io/linuxserver/bookstack
+      repository: gabe565/bookstack
       pullPolicy: IfNotPresent
       tag: "version-v23.06.2"
     env:
