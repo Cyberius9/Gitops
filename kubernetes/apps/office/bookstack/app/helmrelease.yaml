@@ -33,7 +33,7 @@ spec:
     keepHistory: false
   values:
     image:
-      repository: gabe565/bookstack
+      repository: ghcr.io/linuxserver/bookstack
       pullPolicy: IfNotPresent
       tag: "version-v23.06.2"
     env:
@@ -73,8 +73,8 @@ spec:
     mariadb:
       enabled: true
       image:
-        repository: bitnami/mariadb
-        tag: "11.5.6"
+        repository: bjw-s/mariadb
+        tag: "11.5.0"
       architecture: standalone
       auth:
         database: bookstack
