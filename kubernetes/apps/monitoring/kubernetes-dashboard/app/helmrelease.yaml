@@ -37,7 +37,7 @@ spec:
       enabled: true
       className: nginx
       annotations:
-        cert-manager.io/cluster-issuer: letsencrypt-staging
+        #cert-manager.io/cluster-issuer: letsencrypt-staging
         hajimari.io/enable: "true"
         hajimari.io/icon: mdi:kubernetes
         hajimari.io/appName: "Kubernetes-Dashboard"
