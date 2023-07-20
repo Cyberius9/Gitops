@@ -1,6 +1,7 @@
 ---
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
+namespace: office
 resources:
-  - ./namespace.yaml
-  - ./bookstack/ks.yaml
+  - ./volume.yaml
+  - ./helmrelease.yaml
