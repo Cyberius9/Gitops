@@ -74,7 +74,7 @@ spec:
       enabled: true
       image:
         repository: bjw-s/mariadb
-        tag: "11.5.0"
+        tag: "v11.5.0"
       architecture: standalone
       auth:
         database: bookstack
