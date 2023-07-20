@@ -32,6 +32,8 @@ spec:
   uninstall:
     keepHistory: false
   values:
+    imagePullSecrets:
+      - name: "regcred"
     image:
       repository: gabe565/bookstack
       pullPolicy: IfNotPresent
