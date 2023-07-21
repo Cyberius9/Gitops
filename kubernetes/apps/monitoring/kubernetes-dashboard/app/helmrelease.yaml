@@ -46,7 +46,7 @@ spec:
       tls:
         - hosts:
             - *host
-          secretName: "kubernetes.${SECRET_DOMAIN}-tls"
+          secretName: "kubernetes-dasboard-tls"
     metricsScraper:
       enabled: true
     serviceMonitor:
