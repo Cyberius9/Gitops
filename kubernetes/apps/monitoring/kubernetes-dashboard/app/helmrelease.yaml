@@ -40,7 +40,7 @@ spec:
         hajimari.io/enable: "true"
         hajimari.io/icon: mdi:kubernetes
         hajimari.io/appName: "Kubernetes-Dashboard"
-        cert-manager.io/cluster-issuer: letsencrypt-production
+        cert-manager.io/cluster-issuer: letsencrypt-staging
       hosts:
         - &host "kubernetes.${SECRET_DOMAIN}"
       tls:
