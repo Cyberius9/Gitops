@@ -14,7 +14,7 @@ spec:
         kind: HelmRepository
         name: kubernetes-dashboard
         namespace: flux-system
-  maxHistory: 3
+  maxHistory: 2
   install:
     createNamespace: true
     remediation:
@@ -28,13 +28,11 @@ spec:
   values:
     env:
       TZ: "${TIMEZONE}"
-    api:
-      containers:
-        args:
-          - --enable-skip-login
-          - --disable-settings-authorizer
-          - --enable-insecure-login
-          - --token-ttl=43200
+    extraArgs:
+      - --enable-skip-login
+      - --disable-settings-authorizer
+      - --enable-insecure-login
+      - --token-ttl=43200
     ingress:
       enabled: true
       className: nginx
@@ -42,18 +40,14 @@ spec:
         hajimari.io/enable: "true"
         hajimari.io/icon: mdi:kubernetes
         hajimari.io/appName: "Kubernetes-Dashboard"
+        cert-manager.io/cluster-issuer: letsencrypt-production
       hosts:
         - &host "kubernetes.${SECRET_DOMAIN}"
       tls:
         - hosts:
             - *host
+          secretName: "kubernetes.${SECRET_DOMAIN}-tls"
     metricsScraper:
       enabled: true
     serviceMonitor:
-      enabled: false
-    cert-manager:
-      enabled: false
-    nginx:
-      enabled: false
-    metrics-server:
       enabled: false
