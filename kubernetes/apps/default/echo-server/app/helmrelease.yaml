@@ -71,7 +71,8 @@ spec:
                 pathType: Prefix
         tls:
           - hosts:
-              - "echo-server.${SECRET_DOMAIN}-tls"
+              - "echo-server.${SECRET_DOMAIN}"
+            secretName: "echo-server.${SECRET_DOMAIN}-tls"
     resources:
       requests:
         cpu: 5m
