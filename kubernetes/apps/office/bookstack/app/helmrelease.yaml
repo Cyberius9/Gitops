@@ -9,10 +9,10 @@ spec:
   chart:
     spec:
       chart: bookstack
-      version: 7.0.24
+      version: 0.11.2
       sourceRef:
         kind: HelmRepository
-        name: truecharts
+        name: gabe565
         namespace: flux-system
   maxHistory: 3
   install:
@@ -33,9 +33,9 @@ spec:
     keepHistory: false
   values:
     image:
-      repository: tccr.io/truecharts/bookstack
+      repository: ghcr.io/linuxserver/bookstack
       pullPolicy: IfNotPresent
-      tag: v23.06.20230703@sha256:95c7eda80e48ab33cdfa02fdce012829854e23c736b686f2470aec4afbd484d5
+      tag: "version-v23.06.2"
     env:
       APP_TIMEZONE: ${TIMEZONE}
       APP_ENV: production
@@ -73,8 +73,8 @@ spec:
     mariadb:
       enabled: true
       image:
-        repository: tccr.io/truecharts/mariadb
-        tag: v10.11.4@sha256:6241a50f28f2401cefb6c44fa6dcf71954c3494ed65e790b7fdc1c7b7980b6f1
+        repository: bitnami/mariadb
+        tag: "11.5.6"
       architecture: standalone
       auth:
         database: bookstack
