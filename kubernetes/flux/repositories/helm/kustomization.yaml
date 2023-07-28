@@ -16,5 +16,4 @@ resources:
   - ./rook-ceph.yaml
   - ./stakater.yaml
   - ./traefik.yaml
-  - ./truecharts.yaml
   - ./weave-gitops.yaml
