@@ -5,6 +5,8 @@ metadata:
   name: cluster-apps-whoami
   namespace: flux-system
 spec:
+  dependsOn:
+    - name: cluster-apps-traefik-middlewares
   path: ./kubernetes/apps/default/whoami/app
   prune: true
   sourceRef:

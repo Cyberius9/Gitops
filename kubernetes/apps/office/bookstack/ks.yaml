@@ -5,6 +5,9 @@ metadata:
   name: cluster-apps-bookstack
   namespace: flux-system
 spec:
+  dependsOn:
+    - name: cluster-apps-rook-ceph-cluster
+    - name: cluster-apps-traefik-middlewares
   path: ./kubernetes/apps/office/bookstack/app
   prune: true
   sourceRef:

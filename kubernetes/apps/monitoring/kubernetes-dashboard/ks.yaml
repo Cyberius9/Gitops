@@ -5,6 +5,8 @@ metadata:
   name: cluster-apps-kubernetes-dashboard
   namespace: flux-system
 spec:
+  dependsOn:
+    - name: cluster-apps-traefik-middlewares
   path: ./kubernetes/apps/monitoring/kubernetes-dashboard/app
   prune: true
   sourceRef:
