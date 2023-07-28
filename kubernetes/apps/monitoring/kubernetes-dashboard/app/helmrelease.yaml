@@ -52,6 +52,6 @@ spec:
     cert-manager:
       installCRDs: false
     nginx:
-      enabled: false
+      enabled: true
     metrics-server:
       enabled: false
