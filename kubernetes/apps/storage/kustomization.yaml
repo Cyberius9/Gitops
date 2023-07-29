@@ -8,6 +8,7 @@ resources:
   # Flux-Kustomizations
   #- ./rook-ceph/ks.yaml
   # Pre Flux-Kustomizations
-  - ./longhorn/namespace.yaml
+  #- ./longhorn/namespace.yaml
   # Flux-Kustomizations
-  - ./longhorn/ks.yaml
+  #- ./longhorn/ks.yaml
+  - .
