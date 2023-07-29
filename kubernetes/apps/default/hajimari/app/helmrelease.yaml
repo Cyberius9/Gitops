@@ -44,6 +44,7 @@ spec:
           - flux-system
           - monitoring
           - rook-ceph
+          - longhorn
           - office
       globalBookmarks:
         - group: Kommunikation
