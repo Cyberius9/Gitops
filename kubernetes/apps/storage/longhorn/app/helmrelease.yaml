@@ -36,10 +36,7 @@ spec:
         traefik.ingress.kubernetes.io/router.entrypoints: "websecure"
         traefik.ingress.kubernetes.io/router.middlewares: "networking-external-authelia-auth@kubernetescrd"
       host: "longhorn.${SECRET_DOMAIN}"
-      tls:
-        - secretName: "longhorn.${SECRET_DOMAIN}-tls"
-          hosts:
-            - "longhorn.${SECRET_DOMAIN}"
+      tls: true
     defaultSettings:
       defaultReplicaCount: 3
       storageOverProvisioningPercentage: 100
