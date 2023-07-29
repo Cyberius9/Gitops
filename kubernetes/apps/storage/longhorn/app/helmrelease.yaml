@@ -38,7 +38,7 @@ spec:
       host:
         name: "longhorn.${SECRET_DOMAIN}"
       tls:
-        - secretName: "longhorn.${SECRET_DOMAIN}-tls"
+        - secretName: "longhorn-tls"
           hosts:
             - "longhorn.${SECRET_DOMAIN}"
     defaultSettings:
