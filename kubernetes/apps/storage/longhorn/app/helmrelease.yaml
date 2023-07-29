@@ -35,10 +35,9 @@ spec:
         cert-manager.io/cluster-issuer: letsencrypt-production
         traefik.ingress.kubernetes.io/router.entrypoints: "websecure"
         traefik.ingress.kubernetes.io/router.middlewares: "networking-external-authelia-auth@kubernetescrd"
-      host:
-        name: "longhorn.${SECRET_DOMAIN}"
+      host: "longhorn.${SECRET_DOMAIN}"
       tls:
-        - secretName: "longhorn-tls"
+        - secretName: "longhorn.${SECRET_DOMAIN}-tls"
           hosts:
             - "longhorn.${SECRET_DOMAIN}"
     defaultSettings:
