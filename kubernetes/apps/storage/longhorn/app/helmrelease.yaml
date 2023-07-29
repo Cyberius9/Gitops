@@ -37,7 +37,6 @@ spec:
         traefik.ingress.kubernetes.io/router.middlewares: "networking-external-authelia-auth@kubernetescrd"
       host:
         name: "longhorn.${SECRET_DOMAIN}"
-        path: /
       tls:
         - secretName: "longhorn.${SECRET_DOMAIN}-tls"
           hosts:
