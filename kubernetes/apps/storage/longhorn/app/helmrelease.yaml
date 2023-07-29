@@ -25,15 +25,13 @@ spec:
         enable: false
     ingress:
       enabled: true
-      # ingressClassName: traefik
+      ingressClassName: traefik
       annotations:
         external-dns/is-public: "true"
         external-dns.alpha.kubernetes.io/target: "ipv4.${SECRET_DOMAIN}"
         hajimari.io/enable: "true"
         hajimari.io/icon: "server"
         hajimari.io/appName: "longhorn"
-        kubernetes.io/ingress.class: traefik
-        kubernetes.io/tls-acme: "true"
         cert-manager.io/cluster-issuer: letsencrypt-production
         traefik.ingress.kubernetes.io/router.entrypoints: "websecure"
         traefik.ingress.kubernetes.io/router.middlewares: "networking-external-authelia-auth@kubernetescrd"
