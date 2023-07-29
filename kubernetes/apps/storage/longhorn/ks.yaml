@@ -2,7 +2,7 @@
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata:
-  name: longhorn-app
+  name: cluster-apps-longhorn
   namespace: flux-system
 spec:
   path: ./kubernetes/apps/storage/longhorn/app
@@ -21,7 +21,7 @@ spec:
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata:
-  name: longhorn-configs
+  name: cluster-apps-longhorn-configs
   namespace: flux-system
 spec:
   path: ./kubernetes/apps/storage/longhorn/configs
@@ -29,7 +29,7 @@ spec:
   interval: 10m
   prune: true
   dependsOn:
-    - name: longhorn-app
+    - name: cluster-apps-longhorn
   sourceRef:
     kind: GitRepository
     name: home-kubernetes
