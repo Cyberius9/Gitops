@@ -11,4 +11,4 @@ resources:
   #- ./longhorn/namespace.yaml
   # Flux-Kustomizations
   #- ./longhorn/ks.yaml
-  - .
+  - ./test.yaml
