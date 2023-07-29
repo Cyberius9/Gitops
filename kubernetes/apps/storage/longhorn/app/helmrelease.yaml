@@ -49,6 +49,6 @@ spec:
       backupTargetCredentialSecret: longhorn-s3-aws-creds
       backupTarget: s3://longhorn@eu-central-1/
       restoreVolumeRecurringJobs: true
-      defaultLonghornStaticStorageClass: longhorn
+      defaultLonghornStaticStorageClass: longhorn-backup
       concurrentAutomaticEngineUpgradePerNodeLimit: 1
       orphanAutoDeletion: true
