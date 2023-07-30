@@ -10,4 +10,4 @@ resources:
   # Pre Flux-Kustomizations
   - ./longhorn/namespace.yaml
   # Flux-Kustomizations
-  #- ./longhorn/ks.yaml
+  - ./longhorn/ks.yaml
