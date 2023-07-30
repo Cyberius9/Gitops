@@ -5,6 +5,8 @@ metadata:
   name: cluster-apps-flux-webhooks
   namespace: flux-system
 spec:
+  dependsOn:
+    - name: cluster-apps-traefik-middlewares
   path: ./kubernetes/apps/flux-system/addons/webhooks
   prune: true
   sourceRef:
