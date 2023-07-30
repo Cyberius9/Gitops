@@ -9,13 +9,13 @@ resources:
   - ./k8s-gateway/ks.yaml
   - ./metallb/ks.yaml
   - ./traefik/ks.yaml
-  #- ./homelab-external-services/authelia
-  #- ./homelab-external-services/bitbucket
-  #- ./homelab-external-services/bitwarden
-  #- ./homelab-external-services/confluence
-  #- ./homelab-external-services/duplicati
-  #- ./homelab-external-services/getferdi
-  #- ./homelab-external-services/loxone
-  #- ./homelab-external-services/nextcloud
-  #- ./homelab-external-services/plex
-  #- ./homelab-external-services/unifi
+  - ./homelab-external-services/authelia
+  - ./homelab-external-services/bitbucket
+  - ./homelab-external-services/bitwarden
+  - ./homelab-external-services/confluence
+  - ./homelab-external-services/duplicati
+  - ./homelab-external-services/getferdi
+  - ./homelab-external-services/loxone
+  - ./homelab-external-services/nextcloud
+  - ./homelab-external-services/plex
+  - ./homelab-external-services/unifi
