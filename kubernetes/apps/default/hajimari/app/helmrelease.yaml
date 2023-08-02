@@ -77,6 +77,9 @@ spec:
             - name: MDI Symbole
               url: "https://pictogrammers.com/library/mdi"
               icon: "mdi:robot-happy"
+            - name: Simple-Icons Symbole
+              url: "https://simpleicons.org"
+              icon: "simple-icons:simpleicons"
             - name: Kubernetes Cheat Sheet
               url: "https://kubernetes.io/docs/reference/kubectl/cheatsheet"
               icon: "mdi:kubernetes"
