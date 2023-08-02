@@ -40,12 +40,15 @@ spec:
       namespaceSelector:
         matchNames:
           - default
-          - networking
           - flux-system
+          - home-automation
+          - media
           - monitoring
-          - rook-ceph
-          - longhorn
+          - networking
           - office
+          - security
+          - storage
+          - longhorn
       globalBookmarks:
         - group: Kommunikation
           bookmarks:
@@ -62,6 +65,21 @@ spec:
             - name: Github
               url: "https://github.com/Cyberius9/Gitops"
               icon: "mdi:github"
+            - name: K8s-at-Home Suche
+              url: "https://nanne.dev/k8s-at-home-search"
+              icon: "mdi:feature-search"
+            - name: Helm Paket Manager
+              url: "https://helm.sh/de"
+              icon: "mdi:ship-wheel"
+            - name: Artifact Hub
+              url: "https://artifacthub.io"
+              icon: "mdi:source-repository"
+            - name: MDI Symbole
+              url: "https://pictogrammers.com/library/mdi"
+              icon: "mdi:robot-happy"
+            - name: Kubernetes Cheat Sheet
+              url: "https://kubernetes.io/docs/reference/kubectl/cheatsheet"
+              icon: "mdi:kubernetes"
         - group: Unterhaltung
           bookmarks:
             - name: YouTube
