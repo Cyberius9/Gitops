@@ -74,6 +74,9 @@ spec:
             - name: Artifact Hub
               url: "https://artifacthub.io"
               icon: "mdi:source-repository"
+            - name: Iconify Symbole
+              url: "https://icon-sets.iconify.design"
+              icon: "line-md:iconify1"
             - name: MDI Symbole
               url: "https://pictogrammers.com/library/mdi"
               icon: "mdi:robot-happy"
