@@ -91,7 +91,7 @@ spec:
           bookmarks:
             - name: YouTube
               url: "https://youtube.com/feed/subscriptions"
-              icon: "mdi:youtube"
+              icon: "logos:youtube-icon"
         - group: Lesen & News
           bookmarks:
             - name: Reddit
