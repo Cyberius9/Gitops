@@ -54,12 +54,13 @@ spec:
           bookmarks:
             - name: Discord
               url: "https://discord.com"
+              icon: "ic:baseline-discord"
               info: "Kanal: Kubernetes @Home"
         - group: Webhoster
           bookmarks:
             - name: Cloudflare
               url: "https://dash.cloudflare.com"
-              icon: "mdi:cloud"
+              icon: "logos:cloudflare"
         - group: Entwicklung
           bookmarks:
             - name: Github
@@ -70,10 +71,10 @@ spec:
               icon: "mdi:feature-search"
             - name: Helm Paket Manager
               url: "https://helm.sh/de"
-              icon: "mdi:ship-wheel"
+              icon: "logos:helm"
             - name: Artifact Hub
               url: "https://artifacthub.io"
-              icon: "mdi:source-repository"
+              icon: "simple-icons:artifacthub"
             - name: Iconify Symbole
               url: "https://icon-sets.iconify.design"
               icon: "line-md:iconify1"
@@ -95,6 +96,7 @@ spec:
           bookmarks:
             - name: Reddit
               url: "http://reddit.com"
+              icon: "logos:reddit-icon"
     ingress:
       main:
         enabled: true
