@@ -35,7 +35,7 @@ spec:
     image:
       repository: traefik/whoami
       pullPolicy: IfNotPresent
-      tag: v1.10.1
+      tag: v1.11.0
     service:
       main:
         ports:
